@@ -1,0 +1,362 @@
+[
+  {
+    "id": "Q01",
+    "category": "at_risk_list",
+    "question": "Which facilities in District A are at high risk of stocking out of amoxicillin (less than 1 month of stock)?",
+    "kind": "set",
+    "expected": [
+      "F10",
+      "F16"
+    ],
+    "answer": "There are 2 facilities in District A at high risk of stocking out of amoxicillin (less than 1 month of stock):\n\n1. **Synthetic Facility 16** (Facility ID: F16)\n   - Status: STOCKOUT_RISK\n   - Stock on hand: 0\n   - Months of stock: 0.00 (0 weeks)\n   - Avg monthly consumption: 614\n\n2. **Synthetic Facility 10** (Facility ID: F10)\n   - Status: STOCKOUT_RISK\n   - Stock on hand: 316\n   - Months of stock: 0.38 (1.7 weeks)\n   - Avg monthly consumption: 822.3",
+    "passed": true,
+    "reason": "expected ['F10', 'F16'], answer mentioned ['F10', 'F16']",
+    "error": null,
+    "tools_called": [
+      "get_at_risk_facilities"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q02",
+    "category": "at_risk_list",
+    "question": "Which facilities in District C are at high risk of stocking out of artemether-lumefantrine (malaria treatment) (less than 1 month of stock)?",
+    "kind": "set",
+    "expected": [
+      "F18"
+    ],
+    "answer": "In District C, there is 1 facility at high risk of stocking out of artemether-lumefantrine (less than 1 month of stock):\n\n* **Synthetic Facility 18 (F18)**: Stock on hand: 0, Average monthly consumption: 153.7, Months of stock: 0.00 (STOCKOUT_RISK).",
+    "passed": true,
+    "reason": "expected ['F18'], answer mentioned ['F18']",
+    "error": null,
+    "tools_called": [
+      "get_at_risk_facilities"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q03",
+    "category": "at_risk_list",
+    "question": "Which facilities in District A are at high risk of stocking out of ORS and zinc (less than 1 month of stock)?",
+    "kind": "set",
+    "expected": [
+      "F10"
+    ],
+    "answer": "**Synthetic Facility 10** in District A is at high risk of stocking out of ORS + zinc (ORS + zinc co-pack).\n\n* **Facility ID:** F10\n* **Status:** STOCKOUT_RISK\n* **Stock on hand:** 48 kits\n* **Average monthly consumption:** 67 kits\n* **Months of stock remaining:** 0.72 months (approx. 3.1 weeks)",
+    "passed": true,
+    "reason": "expected ['F10'], answer mentioned ['F10']",
+    "error": null,
+    "tools_called": [
+      "get_catalog",
+      "get_at_risk_facilities"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q04",
+    "category": "at_risk_8wk",
+    "question": "Which facilities in District B could run out of paracetamol within the next 8 weeks?",
+    "kind": "set",
+    "expected": [
+      "F14",
+      "F23"
+    ],
+    "answer": "There are 2 facilities in District B at risk of running out of paracetamol within the next 8 weeks. Both are currently at **STOCKOUT_RISK** (under 1 month of stock remaining):\n\n1. **Synthetic Facility 14 (F14)**: **STOCKOUT_RISK** \u2014 0 months of stock remaining (0 weeks), stock on hand: 0, average monthly consumption: 1,882.7.\n2. **Synthetic Facility 23 (F23)**: **STOCKOUT_RISK** \u2014 0.16 months of stock remaining (~0.7 weeks), stock on hand: 167, average monthly consumption: 1,036.",
+    "passed": true,
+    "reason": "expected ['F14', 'F23'], answer mentioned ['F14', 'F23']",
+    "error": null,
+    "tools_called": [
+      "get_at_risk_facilities"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q05",
+    "category": "value",
+    "question": "How many months of artemether-lumefantrine (malaria treatment) does F05 have left?",
+    "kind": "number",
+    "expected": 2.49,
+    "tol": 0.1,
+    "answer": "F05 has **2.49 months** (approximately 11 weeks) of artemether-lumefantrine left, which is classified as **OK**.\n\n* **Stock on hand:** 464 units\n* **Average monthly consumption:** 186.3 units/month\n* **Status:** OK",
+    "passed": true,
+    "reason": "expected 2.49 (+/-0.1), answer numbers [2.49, 11.0, 464.0, 186.3]",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q06",
+    "category": "value",
+    "question": "How many months of ORS and zinc does F22 have left?",
+    "kind": "number",
+    "expected": 4.35,
+    "tol": 0.1,
+    "answer": "Facility F22 has **4.35 months** (about 18.8 weeks) of ORS and zinc left, putting its stock status at **OK**.\n\n* **Stock on hand:** 678 units\n* **Average monthly consumption:** 156 units per month",
+    "passed": true,
+    "reason": "expected 4.35 (+/-0.1), answer numbers [4.35, 18.8, 678.0, 156.0]",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q07",
+    "category": "value",
+    "question": "How many months of amoxicillin does F05 have left?",
+    "kind": "number",
+    "expected": 3.6,
+    "tol": 0.1,
+    "answer": "F05 has **3.60 months** (approximately 15.6 weeks) of amoxicillin (amoxicillin_dt) remaining, placing it in the **OK** status.\n\n* **Stock on hand:** 3,899\n* **Average monthly consumption:** 1,083",
+    "passed": true,
+    "reason": "expected 3.6 (+/-0.1), answer numbers [3.6, 15.6, 3899.0, 1083.0]",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q08",
+    "category": "value",
+    "question": "How many months of artemether-lumefantrine (malaria treatment) does F04 have left?",
+    "kind": "number",
+    "expected": 16.24,
+    "tol": 0.1,
+    "answer": "F04 has **16.24 months** of artemether-lumefantrine (al_6x4) left (status: SURPLUS).\n\n* **Stock on hand:** 1,083\n* **Average monthly consumption:** 66.7 (based on the last 3 months)",
+    "passed": true,
+    "reason": "expected 16.24 (+/-0.1), answer numbers [16.24, 1083.0, 66.7, 3.0]",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q09",
+    "category": "status",
+    "question": "What is the stock status of paracetamol at F14?",
+    "kind": "status",
+    "accept": [
+      "stockout",
+      "stock-out",
+      "risk",
+      "critical",
+      "low"
+    ],
+    "reject": [
+      "surplus",
+      "overstock"
+    ],
+    "expected_status": "STOCKOUT_RISK",
+    "answer": "Paracetamol at F14 is currently at **STOCKOUT_RISK** (0.00 months of stock remaining).\n\n* **Stock on hand:** 0\n* **Average monthly consumption (last 3 months):** 1,882.7 units\n* **Status:** STOCKOUT_RISK (under 1 month of stock)",
+    "passed": true,
+    "reason": "expected one of ['stockout', 'stock-out', 'risk', 'critical', 'low'] and none of ['surplus', 'overstock']",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q10",
+    "category": "status",
+    "question": "What is the stock status of amoxicillin at F04?",
+    "kind": "status",
+    "accept": [
+      "surplus",
+      "overstock",
+      "overstocked",
+      "excess"
+    ],
+    "reject": [
+      "stockout_risk"
+    ],
+    "expected_status": "SURPLUS",
+    "answer": "Amoxicillin at F04 is currently in **SURPLUS** status with 13.82 months of stock remaining (59.9 weeks).\n\n* **Stock on hand:** 4,737\n* **Average monthly consumption (last 3 months):** 342.7\n* **Status:** SURPLUS (>6 months of stock)",
+    "passed": true,
+    "reason": "expected one of ['surplus', 'overstock', 'overstocked', 'excess'] and none of ['stockout_risk']",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q11",
+    "category": "status",
+    "question": "What is the stock status of amoxicillin at F13?",
+    "kind": "status",
+    "accept": [
+      "ok",
+      "adequate",
+      "sufficient",
+      "healthy",
+      "fine"
+    ],
+    "reject": [
+      "stockout_risk",
+      "surplus",
+      "watch"
+    ],
+    "expected_status": "OK",
+    "answer": "The stock status of amoxicillin at F13 is **OK** (3.34 months of stock remaining).\n\n* **Stock on hand:** 1,151 units (as of 2026-10-01)\n* **Average monthly consumption:** 344.7 units\n* **Months of stock:** 3.34 months (approx. 14.5 weeks)",
+    "passed": true,
+    "reason": "expected one of ['ok', 'adequate', 'sufficient', 'healthy', 'fine'] and none of ['stockout_risk', 'surplus', 'watch']",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q12",
+    "category": "surplus_list",
+    "question": "Which facilities have surplus stock (more than 6 months) of amoxicillin?",
+    "kind": "set",
+    "expected": [
+      "F04",
+      "F07",
+      "F12",
+      "F15",
+      "F22",
+      "F23"
+    ],
+    "answer": "There are 6 facilities with surplus stock (>6 months) of amoxicillin:\n\n1. **Synthetic Facility 22** (ID: F22, District A) \u2013 5,521 units on hand (20.22 months of stock)\n2. **Synthetic Facility 23** (ID: F23, District B) \u2013 4,328 units on hand (16.05 months of stock)\n3. **Synthetic Facility 04** (ID: F04, District A) \u2013 4,737 units on hand (13.82 months of stock)\n4. **Synthetic Facility 15** (ID: F15, District C) \u2013 4,765 units on hand (10.50 months of stock)\n5. **Synthetic Facility 12** (ID: F12, District C) \u2013 2,994 units on hand (10.23 months of stock)\n6. **Synthetic Facility 07** (ID: F07, District A) \u2013 5,184 units on hand (10.14 months of stock)",
+    "passed": true,
+    "reason": "expected ['F04', 'F07', 'F12', 'F15', 'F22', 'F23'], answer mentioned ['F04', 'F07', 'F12', 'F15', 'F22', 'F23']",
+    "error": null,
+    "tools_called": [
+      "get_facilities_by_status"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q13",
+    "category": "surplus_list",
+    "question": "Which facilities have surplus stock (more than 6 months) of artemether-lumefantrine (malaria treatment)?",
+    "kind": "set",
+    "expected": [
+      "F04",
+      "F08",
+      "F10",
+      "F21"
+    ],
+    "answer": "There are 4 facilities with surplus stock (more than 6 months) of artemether-lumefantrine (`al_6x4`):\n\n1. **Synthetic Facility 04** (F04) - District A\n   - Stock on hand: 1,083\n   - Months of stock: 16.24 (approx. 70.4 weeks)\n   - Avg monthly consumption: 66.7\n\n2. **Synthetic Facility 10** (F10) - District A\n   - Stock on hand: 839\n   - Months of stock: 15.25 (approx. 66.1 weeks)\n   - Avg monthly consumption: 55.0\n\n3. **Synthetic Facility 08** (F08) - District B\n   - Stock on hand: 654\n   - Months of stock: 12.04 (approx. 52.2 weeks)\n   - Avg monthly consumption: 54.3\n\n4. **Synthetic Facility 21** (F21) - District C\n   - Stock on hand: 615\n   - Months of stock: 6.57 (approx. 28.5 weeks)\n   - Avg monthly consumption: 93.7",
+    "passed": true,
+    "reason": "expected ['F04', 'F08', 'F10', 'F21'], answer mentioned ['F04', 'F08', 'F10', 'F21']",
+    "error": null,
+    "tools_called": [
+      "get_facilities_by_status"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q14",
+    "category": "redistribution",
+    "question": "F14 is about to run out of amoxicillin. Which nearby facility (within 60 km) has surplus and could supply it?",
+    "kind": "contains_id",
+    "expected": "F23",
+    "answer": "Based on the redistribution suggestions, the nearby facility with surplus amoxicillin that could supply **F14** (in District B) is **F23** (also in District B).\n\n* **Donor facility:** F23 (District B)\n* **Recipient facility:** F14 (District B)\n* **Distance:** 16.6 km\n* **Suggested transfer quantity:** 2,394 units\n\n*(Note: These figures are suggestions for human review, not direct orders.)*",
+    "passed": true,
+    "reason": "expected F23, answer mentioned ['F14', 'F23']",
+    "error": null,
+    "tools_called": [
+      "suggest_redistribution"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q15",
+    "category": "redistribution",
+    "question": "F18 is about to run out of artemether-lumefantrine (malaria treatment). Which nearby facility (within 60 km) has surplus and could supply it?",
+    "kind": "contains_id",
+    "expected": "F21",
+    "answer": "Facility **F21** (in District C) has surplus artemether-lumefantrine (commodity code `al_6x4`) and is located 16.3 km away from F18. \n\nBased on the suggested redistribution (which tops up recipients to 3 months of stock while leaving donors with at least 3 months):\n* **Donor Facility:** F21 (District C)\n* **Recipient Facility:** F18 (District C)\n* **Suggested Quantity:** 333 units\n* **Distance:** 16.3 km\n\n*Note:* There is an unmet need of 128 units for F18 because F21's available surplus is insufficient to fully top F18 up to the 3-month target. These suggestions are for human review and should be verified before any transfer.",
+    "passed": true,
+    "reason": "expected F21, answer mentioned ['F18', 'F21']",
+    "error": null,
+    "tools_called": [
+      "suggest_redistribution"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q16",
+    "category": "count",
+    "question": "How many facilities across all districts are at high risk of stocking out of amoxicillin?",
+    "kind": "number",
+    "expected": 5,
+    "tol": 0,
+    "answer": "There are 5 facilities across all districts at high risk of stocking out of amoxicillin (under 1 month of stock):\n\n* **F16** (District A): 0 units on hand, 0.00 months of stock (0 weeks)\n* **F14** (District B): 0 units on hand, 0.00 months of stock (0 weeks)\n* **F21** (District C): 0 units on hand, 0.00 months of stock (0 weeks)\n* **F18** (District C): 0 units on hand, 0.00 months of stock (0 weeks)\n* **F10** (District A): 316 units on hand, 0.38 months of stock (~1.7 weeks)\n\n*(Note: Data is synthetic demo data).*",
+    "passed": true,
+    "reason": "expected 5 (+/-0), answer numbers [5.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",
+    "error": null,
+    "tools_called": [
+      "get_at_risk_facilities"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q17",
+    "category": "count",
+    "question": "How many facilities across all districts are at high risk of stocking out of ORS and zinc?",
+    "kind": "number",
+    "expected": 4,
+    "tol": 0,
+    "answer": "There are **4 facilities** across all districts at high risk of stocking out of ORS and zinc (under 1 month of stock remaining):\n\n1. **Synthetic Facility 17** (District B): 0 stock on hand, 0.00 months of stock remaining\n2. **Synthetic Facility 20** (District B): 0 stock on hand, 0.00 months of stock remaining\n3. **Synthetic Facility 21** (District C): 0 stock on hand, 0.00 months of stock remaining\n4. **Synthetic Facility 10** (District A): 48 stock on hand, 0.72 months (3.1 weeks) of stock remaining",
+    "passed": true,
+    "reason": "expected 4 (+/-0), answer numbers [4.0, 1.0, 1.0, 17.0, 0.0, 0.0, 2.0, 20.0]",
+    "error": null,
+    "tools_called": [
+      "get_at_risk_facilities",
+      "get_at_risk_facilities"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q18",
+    "category": "missing",
+    "question": "What is the stock level of ORS and zinc at F01?",
+    "kind": "missing",
+    "answer": "Facility F01 has no stock records for ORS and zinc; it may not stock this commodity.",
+    "passed": true,
+    "reason": "expected the answer to say the data is missing",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock",
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q19",
+    "category": "missing",
+    "question": "What is the stock level of amoxicillin at F99?",
+    "kind": "missing",
+    "answer": "Data is unavailable because Facility 'F99' was not found in the dataset.",
+    "passed": true,
+    "reason": "expected the answer to say the data is missing",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "id": "Q20",
+    "category": "missing",
+    "question": "How much insulin does F03 have in stock?",
+    "kind": "missing",
+    "answer": "Insulin stock data is unavailable because \"insulin\" is not in the dataset's catalog of tracked commodities. \n\nThe tracked commodities in the dataset are:\n- Artemether-lumefantrine 20/120mg (6x4) (`al_6x4`)\n- Amoxicillin 250mg dispersible tablets (`amoxicillin_dt`)\n- ORS + zinc co-pack (`ors_zinc`)\n- Paracetamol 500mg tablets (`paracetamol`)",
+    "passed": true,
+    "reason": "expected the answer to say the data is missing",
+    "error": null,
+    "tools_called": [
+      "get_facility_stock"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  }
+]

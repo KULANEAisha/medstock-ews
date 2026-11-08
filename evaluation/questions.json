@@ -1,0 +1,199 @@
+[
+  {
+    "id": "Q01",
+    "category": "at_risk_list",
+    "question": "Which facilities in District A are at high risk of stocking out of amoxicillin (less than 1 month of stock)?",
+    "kind": "set",
+    "expected": [
+      "F10",
+      "F16"
+    ]
+  },
+  {
+    "id": "Q02",
+    "category": "at_risk_list",
+    "question": "Which facilities in District C are at high risk of stocking out of artemether-lumefantrine (malaria treatment) (less than 1 month of stock)?",
+    "kind": "set",
+    "expected": [
+      "F18"
+    ]
+  },
+  {
+    "id": "Q03",
+    "category": "at_risk_list",
+    "question": "Which facilities in District A are at high risk of stocking out of ORS and zinc (less than 1 month of stock)?",
+    "kind": "set",
+    "expected": [
+      "F10"
+    ]
+  },
+  {
+    "id": "Q04",
+    "category": "at_risk_8wk",
+    "question": "Which facilities in District B could run out of paracetamol within the next 8 weeks?",
+    "kind": "set",
+    "expected": [
+      "F14",
+      "F23"
+    ]
+  },
+  {
+    "id": "Q05",
+    "category": "value",
+    "question": "How many months of artemether-lumefantrine (malaria treatment) does F05 have left?",
+    "kind": "number",
+    "expected": 2.49,
+    "tol": 0.1
+  },
+  {
+    "id": "Q06",
+    "category": "value",
+    "question": "How many months of ORS and zinc does F22 have left?",
+    "kind": "number",
+    "expected": 4.35,
+    "tol": 0.1
+  },
+  {
+    "id": "Q07",
+    "category": "value",
+    "question": "How many months of amoxicillin does F05 have left?",
+    "kind": "number",
+    "expected": 3.6,
+    "tol": 0.1
+  },
+  {
+    "id": "Q08",
+    "category": "value",
+    "question": "How many months of artemether-lumefantrine (malaria treatment) does F04 have left?",
+    "kind": "number",
+    "expected": 16.24,
+    "tol": 0.1
+  },
+  {
+    "id": "Q09",
+    "category": "status",
+    "question": "What is the stock status of paracetamol at F14?",
+    "kind": "status",
+    "accept": [
+      "stockout",
+      "stock-out",
+      "risk",
+      "critical",
+      "low"
+    ],
+    "reject": [
+      "surplus",
+      "overstock"
+    ],
+    "expected_status": "STOCKOUT_RISK"
+  },
+  {
+    "id": "Q10",
+    "category": "status",
+    "question": "What is the stock status of amoxicillin at F04?",
+    "kind": "status",
+    "accept": [
+      "surplus",
+      "overstock",
+      "overstocked",
+      "excess"
+    ],
+    "reject": [
+      "stockout_risk"
+    ],
+    "expected_status": "SURPLUS"
+  },
+  {
+    "id": "Q11",
+    "category": "status",
+    "question": "What is the stock status of amoxicillin at F13?",
+    "kind": "status",
+    "accept": [
+      "ok",
+      "adequate",
+      "sufficient",
+      "healthy",
+      "fine"
+    ],
+    "reject": [
+      "stockout_risk",
+      "surplus",
+      "watch"
+    ],
+    "expected_status": "OK"
+  },
+  {
+    "id": "Q12",
+    "category": "surplus_list",
+    "question": "Which facilities have surplus stock (more than 6 months) of amoxicillin?",
+    "kind": "set",
+    "expected": [
+      "F04",
+      "F07",
+      "F12",
+      "F15",
+      "F22",
+      "F23"
+    ]
+  },
+  {
+    "id": "Q13",
+    "category": "surplus_list",
+    "question": "Which facilities have surplus stock (more than 6 months) of artemether-lumefantrine (malaria treatment)?",
+    "kind": "set",
+    "expected": [
+      "F04",
+      "F08",
+      "F10",
+      "F21"
+    ]
+  },
+  {
+    "id": "Q14",
+    "category": "redistribution",
+    "question": "F14 is about to run out of amoxicillin. Which nearby facility (within 60 km) has surplus and could supply it?",
+    "kind": "contains_id",
+    "expected": "F23"
+  },
+  {
+    "id": "Q15",
+    "category": "redistribution",
+    "question": "F18 is about to run out of artemether-lumefantrine (malaria treatment). Which nearby facility (within 60 km) has surplus and could supply it?",
+    "kind": "contains_id",
+    "expected": "F21"
+  },
+  {
+    "id": "Q16",
+    "category": "count",
+    "question": "How many facilities across all districts are at high risk of stocking out of amoxicillin?",
+    "kind": "number",
+    "expected": 5,
+    "tol": 0
+  },
+  {
+    "id": "Q17",
+    "category": "count",
+    "question": "How many facilities across all districts are at high risk of stocking out of ORS and zinc?",
+    "kind": "number",
+    "expected": 4,
+    "tol": 0
+  },
+  {
+    "id": "Q18",
+    "category": "missing",
+    "question": "What is the stock level of ORS and zinc at F01?",
+    "kind": "missing"
+  },
+  {
+    "id": "Q19",
+    "category": "missing",
+    "question": "What is the stock level of amoxicillin at F99?",
+    "kind": "missing"
+  },
+  {
+    "id": "Q20",
+    "category": "missing",
+    "question": "How much insulin does F03 have in stock?",
+    "kind": "missing"
+  }
+]
