@@ -96,3 +96,19 @@ Open http://localhost:5173. Run the evaluation with `python -m evaluation.run_ev
 
 ---
 Built by Aisha Kulane, https://aishakulane.netlify.app/
+
+## Screenshots
+<img width="2850" height="1520" alt="Medstock Pic 1" src="https://github.com/user-attachments/assets/6e0d30cd-17cf-4082-83b9-663ff51a8206" />
+
+<img width="2860" height="1520" alt="medstock pic 3" src="https://github.com/user-attachments/assets/bd786c3f-80c3-4ec3-84f8-fe570308a505" />
+
+<img width="2850" height="1538" alt="medstock pic 4" src="https://github.com/user-attachments/assets/556655ef-c1ec-4286-8492-5add96deedfd" />
+<img width="1222" height="1536" alt="medstock pic 6" src="https://github.com/user-attachments/assets/f62c3f1c-f0e5-4da4-9f16-e44621a24fe2" />
+<img width="1218" height="394" alt="medstock pic 7" src="https://github.com/user-attachments/assets/acd53690-cf89-4224-b104-c359251cbd3e" />
+
+<img width="2850" height="1524" alt="medstock pic 8" src="https://github.com/user-attachments/assets/cd94880f-42e7-4e48-9a43-c1c47498df52" />
+
+
+
+
+
