@@ -45,7 +45,6 @@ Which facilities are about to run out of essential medicines, and where could st
 | Counts | 2/2 |
 | Missing data | 3/3 |
 
-**First-run failures:** [FILL IN: one line per failure, what caused it and what you changed. One was a scoring bug and one was a missing tool.]
 
 **How much to trust 20/20:** I fixed the tools and scorer after the first run, using this same question set, so it isn't a clean test. It is also only 20 questions, on synthetic data. It shows the assistant uses its tools correctly and refuses to guess. It does not show the forecast is accurate on real data. Per-question results are in `evaluation/results.json`.
 
